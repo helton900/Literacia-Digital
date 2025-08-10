@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Literacia Digital – Office</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+      color: #003366;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+    .section {
+      padding: 30px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section img {
+      max-width: 100%;
+      height: auto;
+      margin: 20px auto;
+      display: block;
+    }
+    .price {
+      font-size: 1.5em;
+      color: #0077cc;
+      margin: 10px 0;
+    }
+    .button {
+      background-color: #0077cc;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .tool-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .tool-grid img {
+      width: 100px;
+      transition: transform 0.3s ease;
+    }
+    .tool-grid img:hover {
+      transform: scale(1.1);
+    }
+    .testemunho {
+      background-color: #f0f8ff;
+      padding: 30px;
+      border-top: 2px solid #0077cc;
+    }
+    .testemunho blockquote {
+      font-style: italic;
+      font-size: 1.2em;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+
+    /* 📱 Estilo para telas pequenas (celular) */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8em;
+      }
+      .tool-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+      .tool-grid img {
+        width: 80px;
+      }
+      .button {
+        padding: 12px 20px;
+        font-size: 1em;
+      }
+    }
+
+    /* 💻 Estilo para telas grandes (PC) */
+    @media (min-width: 601px) {
+      .section {
+        max-width: 900px;
+        margin: auto;
+      }
+      .tool-grid img {
+        width: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Literacia Digital</h1>
+    <p>Domine Word, Excel e Power BI com o livro Office</p>
+  </header>
+
+  <section class="section">
+    <h2>📘 Sobre o E-book</h2>
+    <img src="office-packaging.jpg" alt="Capa do livro Office 2024">
+    <p>Este é o guia essencial para quem quer aprender a usar Word, Excel e Power BI de forma prática e profissional.</p>
+    <p class="price">💰 Apenas 200MT/
+    2867 Kwanzas</p>
+    <a href="https://pay.kuenha.com/dc9fb9f4-5e96-4347-be45-57492f5d5693" class="button">Comprar Agora</a>
+  </section>
+
+  <section class="section">
+    <h2>📊 Ferramentas que você vai dominar</h2>
+    <div class="tool-grid">
+      <img src="word-logo.jpg" alt="Word">
+      <img src="excel-logo.jpg" alt="Excel">
+      <img src="powerbi-dashboard.jpg" alt="Power BI">
+    </div>
+  </section>
+
+  <section class="section testemunho">
+    <h2>💬 Testemunho</h2>
+    <img src="imagem-testemunho.jpg" alt="Pessoa feliz com emprego">
+    <blockquote>
+      "Comprei o livro, aprendi tudo e consegui meu emprego dos sonhos!"<br>
+      Então o que você está esperando?
+    </blockquote>
+    <a href="https://pay.kuenha.com/dc9fb9f4-5e96-4347-be45-57492f5d5693" class="button">Garanta o seu agora</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Literacia Digital. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    const sections = document.querySelectorAll('.section');
+    window.addEventListener('scroll', () => {
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          sec.classList.add('visible');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
